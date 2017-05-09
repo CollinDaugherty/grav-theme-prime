@@ -1,0 +1,121 @@
+/* Variables
+ * ===============
+ *
+ * All variables and most of the configuration is defined on this page. */
+
+
+/* Containers */
+
+$x-small: 600px;
+$small: 800px;
+$medium: 1000px;
+$large: 1200px;
+$full: 100%;
+
+// Breakpoints  
+$mobile: $x-small;
+$desktop: $medium;
+
+/* Colors */
+
+$background: #ffffff;
+$primary-color: #3f51b5;
+$secondary-color: #ff4081;
+$accent-color: #cdcdcd;
+$alternate-background: #fafafa;
+$alternate-color: #404040;
+$link-color: $primary-color;
+$link-hover-color: $secondary-color;
+$highlight: #ffeea8;
+$error: #D33C40;
+$bq-border: 8px solid #cdcdcd;
+
+/* Typography */
+
+// Body font
+$font-size: 1rem;
+$body-font-size: 1.25rem;
+$font-style: normal;
+$font-variant: normal;
+$font-weight: normal;
+$font-color: #333;
+$font-family: 'Roboto', sans-serif;
+$line-height: 1.5;
+
+// Headings
+$heading-font-color: $primary-color;
+$heading-font-weight: bold;
+$heading-font-family: $font-family;
+$heading-line-height: 1.2;
+
+$h1: 2.5rem;
+$h2: 2rem;
+$h3: 1.8rem;
+$h4: 1.6rem;
+$h5: 1.4rem;
+
+/* Padding */
+
+$padding: 2rem;
+$content-padding: 60px 0;
+$content-padding-mobile: 30px 0;
+
+/* Borders */
+
+$border-width: 1px;
+$border-style: solid;
+$border-color: #cdcdcd;
+$border-radius: 4px;
+$borders: $border-width $border-style $border-color;
+
+/* Buttons */
+
+$button-background: $primary-color;
+$button-background-hover: darken($button-background, 10%);
+$button-color: #ffffff;
+$button-font-weight: 600;
+$button-font-family: $font-family;
+$button-font-size: 1rem;
+$button-border-width: 1px;
+$button-border-style: solid;
+$button-border-color: $button-background;
+$button-border-radius: $border-radius;
+$button-text-transform: uppercase;
+
+// Accent buttons
+$accent-button-background: $secondary-color;
+$accent-button-color: #ffffff;
+$accent-button-color-hover: #ffffff;
+
+// Muted Buttons
+$muted-border: 1px solid $accent-color;
+$muted-border-hover: 1px solid darken($accent-color, 30%);
+$muted-background: transparent;
+$muted-background-hover: transparent;
+$muted-color: darken($accent-color, 50%);
+$muted-color-hover: darken($accent-color, 50%);
+
+// Round Buttons
+$round-buttons: 40px;
+
+/* Forms */
+
+$forms: ('[type=color], [type=date], [type=datetime], [type=datetime-local], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=url], [type=week], [type=time], select, textarea');
+$buttons: ('.button, a.button, button, [type=submit], [type=reset], [type=button]');
+$input-background: #ffffff;
+$placeholder: darken($accent-color, 20%);
+$form-border: 1px solid $accent-color;
+$form-border-hover: 1px solid darken($accent-color, 10%);
+$form-border-focus: 1px solid $secondary-color;
+
+/* Tables */
+
+$stripes: #f0f0f0;
+$caption: darken($accent-color, 20%);
+
+/* Code */
+
+$code-color: $font-color;
+$code-family: Menlo, monospace;
+$code-background: #f4f4f4;
+$code-borders: $borders;

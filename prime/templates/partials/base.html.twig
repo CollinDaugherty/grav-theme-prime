@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% if header.title %}{{ header.title|e('html')}} - {% endif %}{{ site.title|e('html') }}</title>
+
+    {% do assets.addCss('https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css') %}
+    {% do assets.addCss('theme://css/main.min.css') %}
+    {% do assets.addCss('theme://css/custom.css') %}
+    
+      {{ assets.css() }}
+
+    {% do assets.addJs('jquery') %}
+    {% do assets.addJs('theme://js/navigation.js') %}
+
+      {{ assets.js() }}
+
+    <link rel="icon" href="{{ url('theme://img/favicon.png') }}">
+
+</head>
+
+<body>
+    
+{% block top %}
+    <section class="navigation">
+      <div class="nav-container">
+        <div class="brand">
+          <a href="{{ base_url == '' ? '/' : base_url }}">
+              {{ config.site.title }}
+          </a>
+        </div>
+        <nav>
+          <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+          <ul class="nav-list">
+            {% for page in pages.children.visible %}
+                <li>
+                    <a href="{{ page.url }}">
+                        {{ page.menu }}
+                    </a>
+                </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+    </section>
+{% endblock %}
+
+  {% block main %}
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+  {% endblock %}
+
+    
+
+  <div class="padding-top padding-bottom alternate-background" id="footer">
+  <div class="container">
+    <div class="row">
+    
+    <div class="small-50 text-center">
+      <a href="https://www.collindaugherty.com/">Theme <i class="fa fa-code"></i> by Collin Daugherty</a>
+    </div>
+
+    <div class="small-50 text-center">
+      <ul class="clean-list">
+          {% for page in pages.children.visible %}
+              <li>
+                  <a href="{{ page.url }}">
+                      {{ page.menu }}
+                  </a>
+              </li>
+          {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  </div>
+  </div>
+
+
+</body>
+</html>

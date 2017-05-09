@@ -1,0 +1,17 @@
+{% extends "partials/base.html.twig" %}
+
+{% set hero_image = page.media.images|first %}
+
+{% block content %}
+    <header class="text-center content-section background-img colored-background" style="background-image:url({{hero_image.url}})">
+        <div class="small-container">
+          <h1>{{page.title}}</h1>
+        </div>
+    </header>
+
+<section class="content-section">
+    <div class="small-container padding-bottom">
+        {{ page.content }}
+    </div>
+</section>
+{% endblock %}

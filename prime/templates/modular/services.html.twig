@@ -1,0 +1,16 @@
+{% set image = page.media.images|first %}
+
+
+      <div class="container padding-bottom">
+            <div class="row">
+
+              <div class="small-40">
+                <img class="responsive-image" src="{{image.url}}">
+              </div>
+
+              <div class="small-60">
+                {{ content }}
+              </div>
+
+            </div>   
+      </div>

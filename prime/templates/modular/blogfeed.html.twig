@@ -1,0 +1,26 @@
+{% set collection = page.collection() %}
+
+<section class="content-section alternate-background">
+        <div class="medium-container">
+            <h1 class="text-center">{{page.title}}</h1>
+            
+            {% for page in collection %}
+                <div class="row">
+                    <div class="small-20">
+                        <div class="thumbnail"><a href="{{page.url}}">{{page.media.images|first}}</a></div>
+                    </div>
+
+                    <div class="small-80 inline-block">
+                        <h3><a href="{{page.url}}">{{page.title}}</a></h3>
+                        <p>{{page.summary}}</p>
+                    </div>
+
+                </div>
+            {% endfor %}
+
+        <div class="row text-center padding-top">
+            <a class="button accent-button" href="/blog">Full Blog <i class="fa fa-arrow-right"></i></a>
+        </div>
+            
+        </div>
+    </section>

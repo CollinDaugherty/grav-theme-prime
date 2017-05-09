@@ -1,0 +1,38 @@
+{% extends "partials/base.html.twig" %}
+
+    {% set collection = page.collection() %}
+
+    {% set hero_image = page.media.images|first %}
+
+    {% block content %}
+    <header class="text-center content-section background-img colored-background" style="background-image:url({{hero_image.url}})">
+        <div class="small-container">
+          <h1>{{page.title}}</h1>
+        </div>
+    </header>
+
+
+    <section class="content-section">
+        <div class="medium-container padding-bottom">
+            
+            {% for page in collection %}
+                <div class="row">
+                    <div class="small-20">
+                        <div class="thumbnail"><a href="{{page.url}}">{{page.media.images|first}}</a></div>
+                    </div>
+
+                    <div class="small-80 inline-block">
+                        <h3><a href="{{page.url}}">{{page.title}}</a></h3>
+                        <p>{{page.summary}}</p>
+                    </div>
+
+                </div>
+            {% endfor %}
+
+            {% if config.plugins.pagination.enabled and collection.params.pagination %}
+                {% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
+            {% endif %}
+            
+        </div>
+    </section>
+    {% endblock %}

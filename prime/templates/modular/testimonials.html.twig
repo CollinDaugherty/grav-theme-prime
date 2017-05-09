@@ -1,0 +1,17 @@
+<section class="content-section">
+      <div class="container padding-bottom">
+        <h1 class="text-center">{{page.title}}</h1>
+
+        <div class="row">
+          
+          {% for column in page.content|split('<hr />') %}
+            <div class="small-50">
+              <blockquote>
+                {{ column }}
+              </blockquote>
+            </div>
+          {% endfor %}
+          
+        </div>
+      </div>
+    </section>

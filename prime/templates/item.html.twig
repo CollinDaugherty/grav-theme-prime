@@ -1,0 +1,24 @@
+{% extends "partials/base.html.twig" %}
+
+    {% block content %}
+        <article class="content-section">
+            <div class="small-container padding-bottom">
+
+            <div class="row text-center padding-bottom">
+                <div class="small-100">
+                    {{page.media.images|first}}
+                    <h1 class="no-margin-bottom">{{page.title}}</h1>
+                    <cite>{{page.date | date("M d, Y")}}</cite>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="small-100">
+                    {{page.content}}
+                </div>
+            </div>
+
+            </div>
+        </article>
+
+    {% endblock %}

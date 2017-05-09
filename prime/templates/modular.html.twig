@@ -1,0 +1,28 @@
+{% extends "partials/base.html.twig" %}
+
+{% block top %}
+
+  {{ parent() }}
+
+  {% set hero = page.collection|first %}
+
+  {% set hero_image = hero.media.images|first %}
+
+  <div class="background-img colored-background" style="background-image:url({{hero_image.url}})">
+    {{hero.content}}
+  </div>
+
+{% endblock %}
+
+
+{% block main %}
+
+  {% for name, module in page.collection %}
+
+    {% if name != "_hero" %}
+      {{module.content}}
+    {% endif %}
+
+  {% endfor %}
+
+{% endblock %}

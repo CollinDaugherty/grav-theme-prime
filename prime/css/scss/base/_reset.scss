@@ -1,0 +1,28 @@
+/* Reset
+  =============== */
+
+// Reset box sizing to border box
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+// Remove italic
+address {
+  font-style: normal;
+}
+
+// Remove figure margin
+figure {
+  margin: 0;
+}
+
+// Match search with other input types
+input[type=search] {
+  box-sizing: border-box;
+}
