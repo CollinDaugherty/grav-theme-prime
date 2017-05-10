@@ -4,6 +4,8 @@
 
 PRIME is a clean, modern, responsive theme for [Grav](http://getgrav.org).
 
+[PRIME Demo](https://demo.collindaugherty.com/prime)
+
 # Installation
 
 Installing the PRIME theme can be done in one of two ways. Our GPM (Grav Package Manager) installation method enables you to quickly and easily install the theme with a simple terminal command, while the manual method enables you to do so via a zip file. 
