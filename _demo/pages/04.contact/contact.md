@@ -1,12 +1,14 @@
 ---
 title: Contact
+widget:
+    options: ''
 form:
-    name: contact-form
+    name: contact
     fields:
         -
             name: name
             label: Name
-            autofocus: 'off'
+            autocomplete: 'on'
             type: text
             validate:
                 required: true
@@ -17,29 +19,39 @@ form:
             validate:
                 required: true
         -
+            name: budget
+            type: text
+            label: Budget
+            validate:
+                required: true
+        -
             name: message
             label: Message
             type: textarea
-            rows: 6
+            placeholder: null
+            rows: 8
             validate:
                 required: true
+        -
+            name: honeypot
+            type: honeypot
     buttons:
         -
             type: submit
-            value: Submit
+            value: Send
     process:
         -
             email:
-                from: '{{ config.plugins.email.from }}'
-                to: ['{{ config.plugins.email.from }}', '{{ form.value.email }}']
-                subject: '[Feedback] {{ form.value.name|e }}'
+                subject: '[Site Contact Form] {{ form.value.name|e }}'
                 body: '{% include ''forms/data.html.twig'' %}'
         -
             save:
-                fileprefix: feedback-
+                fileprefix: contact-
                 dateformat: Ymd-His-u
                 extension: txt
                 body: '{% include ''forms/data.txt.twig'' %}'
+        -
+            message: 'Thank you for getting in touch!'
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad exercitationem odio doloremque nobis quo officia in tempore magni maxime.
